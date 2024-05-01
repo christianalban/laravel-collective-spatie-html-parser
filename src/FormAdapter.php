@@ -97,6 +97,8 @@ class FormAdapter
 
     public function close()
     {
+        html()->endModel();
+
         return html()->form()->close();
     }
 
@@ -110,6 +112,108 @@ class FormAdapter
     public function search($name, $value = null, $options = [])
     {
         return $this->input('search', $name, $value, $options);
+    }
+
+    public function model($model, array $options = [])
+    {
+        html()->model($model);
+
+        return $this->open($options);
+    }
+
+    public function hidden($name, $value = null, $options = [])
+    {
+        $element = html()->hidden($name, $value);
+
+        return $this->mergeOptions($element, $options);
+    }
+
+    public function email($name, $value = null, $options = [])
+    {
+        $element = html()->email($name, $value);
+
+        return $this->mergeOptions($element, $options);
+    }
+
+    public function tel($name, $value = null, $options = [])
+    {
+        $element = html()->tel($name, $value);
+
+        return $this->mergeOptions($element, $options);
+    }
+
+    public function number($name, $value = null, $options = [])
+    {
+        return $this->input('number', $name, $value, $options);
+    }
+
+    public function date($name, $value = null, $options = [])
+    {
+        $element = html()->date($name, $value);
+
+        return $this->mergeOptions($element, $options);
+    }
+
+    public function datetime($name, $value = null, $options = [])
+    {
+        return $this->input('datetime', $name, $value, $options);
+    }
+
+    public function datetimeLocal($name, $value = null, $options = [])
+    {
+        return $this->input('datetime-local', $name, $value, $options);
+    }
+
+    public function time($name, $value = null, $options = [])
+    {
+        $element = html()->time($name, $value);
+
+        return $this->mergeOptions($element, $options);
+    }
+
+    public function url($name, $value = null, $options = [])
+    {
+        return $this->input('url', $name, $value, $options);
+    }
+
+    public function file($name, $options = [])
+    {
+        $element = html()->file($name);
+
+        return $this->mergeOptions($element, $options);
+    }
+
+    public function textarea($name, $value = null, $options = [])
+    {
+        $element = html()->textarea($name, $value);
+
+        return $this->mergeOptions($element, $options);
+    }
+
+    public function reset($value, $attributes = [])
+    {
+        $element = html()->reset($value);
+
+        return $this->mergeOptions($element, $attributes);
+    }
+
+    public function image($url, $name = null, $attributes = [])
+    {
+        $element = html()->img($url, $name);
+
+        return $this->mergeOptions($element, $attributes);
+    }
+
+    public function color($name, $value = null, $options = [])
+    {
+        return $this->input('color', $name, $value, $options);
+    }
+
+    public function button($value = null, $options = [])
+    {
+        $element = html()->button($value);
+
+        return $this->mergeOptions($element, $options);
     }
 
     public function __call($method, $args)
