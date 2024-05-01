@@ -1,0 +1,38 @@
+{
+    "name": "alban/laravel-collective-spatie-html-parser",
+    "description": "Adapter class that allows use spatie/laravel-html for old projects that were using the abanondated laravelcollective/html package, and allow to update to new versions of laravel",
+    "type": "library",
+    "require": {
+        "php": "^7.2",
+        "spatie/laravel-html": "2.20.0",
+        "illuminate/support": "^5.5"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Alban\\LaravelCollectiveSpatieHtmlParser\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Alban\\LaravelCollectiveSpatieHtmlParser\\ServiceProvider"
+            ],
+            "aliases": {
+                "Form": "Alban\\LaravelCollectiveSpatieHtmlParser\\FormFacade"
+            }
+        }
+    },
+    "authors": [
+        {
+            "name": "Christian Albán",
+            "email": "christianalbanctdb1d@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+        "allow-plugins": {
+            "kylekatarnls/update-helper": true
+        }
+    }
+}
