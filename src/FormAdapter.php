@@ -3,18 +3,10 @@
 namespace Alban\LaravelCollectiveSpatieHtmlParser;
 
 use Alban\LaravelCollectiveSpatieHtmlParser\Traits\AttributesUtils;
-use Spatie\Html\Elements\Element;
 
 class FormAdapter
 {
     use AttributesUtils;
-
-    private static $components = [];
-
-    public static function component($name, $view, $attributes = [])
-    {
-        static::$components[$name] = compact('view', 'attributes');
-    }
 
     public function checkbox($name, $value = 1, $checked = null, $options = [])
     {
@@ -214,16 +206,5 @@ class FormAdapter
         $element = html()->button($value);
 
         return $this->mergeOptions($element, $options);
-    }
-
-    public function __call($method, $args)
-    {
-        if (array_key_exists($method, static::$components)) {
-            $component = static::$components[$method];
-
-            $attributes = array_combine($component['attributes'], $args);
-
-            return Element::withTag('span')->html(view($component['view'], $attributes)->render());
-        }
     }
 }
