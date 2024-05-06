@@ -33,7 +33,7 @@ class FormAdapter
         }
 
         if ($files) {
-            $form->acceptsFiles();
+            $form = $form->acceptsFiles();
         }
 
         return $this->mergeOptions($form, $options)->open();
