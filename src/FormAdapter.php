@@ -17,9 +17,9 @@ class FormAdapter
 
     public function open(array $options = [])
     {
-        $method = array_get($options, 'method', 'POST');
-        $route = array_get($options, 'route', '');
-        $files = array_get($options, 'files', false);
+        $method = array_key_exists('method', $options) ? $options['method'] : 'POST';
+        $route = array_key_exists('route', $options) ? $options['route'] : '';
+        $files = array_key_exists('files', $options) ? $options['files'] : false;
 
         unset($options['method'], $options['route'], $options['files']);
 
