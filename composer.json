@@ -5,7 +5,7 @@
     "require": {
         "php": "^7.3",
         "spatie/laravel-html": "2.30.0",
-        "illuminate/support": "^6.0"
+        "illuminate/support": "^7.0"
     },
     "license": "MIT",
     "autoload": {
