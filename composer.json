@@ -3,9 +3,9 @@
     "description": "Adapter class that allows use spatie/laravel-html for old projects that were using the abanondated laravelcollective/html package, and allow to update to new versions of laravel",
     "type": "library",
     "require": {
-        "php": "^7.3",
-        "spatie/laravel-html": "2.30.0",
-        "illuminate/support": "^6.0"
+        "php": "^8.0",
+        "spatie/laravel-html": "3.5.0",
+        "illuminate/support": "^8.0|^9.0"
     },
     "license": "MIT",
     "autoload": {
