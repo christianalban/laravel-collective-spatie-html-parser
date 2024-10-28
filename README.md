@@ -45,6 +45,16 @@ To install the package, use composer:
 ```sh
 composer require alban/laravel-collective-spatie-html-parser
 ```
+Register the `FormFacade` alias class
+```php
+    'aliases' => [
+
+        ...
+        'Form' => Alban\LaravelCollectiveSpatieHtmlParser\FormFacade::class,
+        ...
+
+    ],
+```
 
 ## Usage
 
@@ -59,4 +69,4 @@ For more examples, please refer to the source code in the `src/FormAdapter.php` 
 
 ## License
 
-This package is open-sourced software licensed under the (MIT license)[https://opensource.org/licenses/MIT].
+This package is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
