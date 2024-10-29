@@ -45,16 +45,6 @@ To install the package, use composer:
 ```sh
 composer require alban/laravel-collective-spatie-html-parser
 ```
-Register the `FormFacade` alias class
-```php
-    'aliases' => [
-
-        ...
-        'Form' => Alban\LaravelCollectiveSpatieHtmlParser\FormFacade::class,
-        ...
-
-    ],
-```
 
 ## Usage
 
