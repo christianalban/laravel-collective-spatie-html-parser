@@ -1,7 +1,7 @@
 <?php
- 
+
 namespace Alban\LaravelCollectiveSpatieHtmlParser;
- 
+
 use Illuminate\Support\Facades\Facade;
 
 /**
