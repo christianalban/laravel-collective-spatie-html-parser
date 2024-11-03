@@ -4,8 +4,8 @@
     "type": "library",
     "require": {
         "php": "^8.2 | ^8.0 | ^7.4",
-        "spatie/laravel-html": "3.5.0",
-        "illuminate/support": "^8.0|^9.0|^10.0"
+        "spatie/laravel-html": "^3.11",
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0"
     },
     "license": "MIT",
     "autoload": {
