@@ -29,6 +29,7 @@
             "email": "christianalbanctdb1d@gmail.com"
         }
     ],
+
     "minimum-stability": "stable",
     "config": {
         "allow-plugins": {
