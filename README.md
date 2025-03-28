@@ -60,3 +60,7 @@ For more examples, please refer to the source code in the `src/FormAdapter.php` 
 ## License
 
 This package is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Contributing
+
+You are welcome to contribute to this project. Please refer to the [contributing guidelines](CONTRIBUTING.md) for more information.

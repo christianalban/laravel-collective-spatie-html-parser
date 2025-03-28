@@ -25,11 +25,13 @@ class FormAdapter
 
         $form = html();
 
-        if (is_array($route)) {
+        if (is_array($route) && count($route)) {
             $action = array_shift($route);
             $form = $form->form($method, route($action, $route));
-        } else {
+        } elseif ($route != null && $route != [] && $route != '') {
             $form = $form->form($method, route($route));
+        } else {
+            $form = $form->form($method);
         }
 
         if ($files) {
