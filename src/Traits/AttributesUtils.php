@@ -14,7 +14,7 @@ trait AttributesUtils
         }
 
         if (isset($options['placeholder'])) {
-            $newElement = $newElement->placeholder($options['class']);
+            $newElement = $newElement->placeholder($options['placeholder']);
             unset($options['placeholder']);
         }
 
