@@ -70,8 +70,12 @@ class FormAdapter
         array $optionsAttributes = [],
         array $optgroupsAttributes = []
     ) {
-        $element = html()->select($name, $list, $selected);
-
+        if (isset($selectAttributes['multiple']) || in_array('multiple', $selectAttributes)) {
+            $element = html()->select($name, $list, $selected)->multiple();
+        } else {
+            $element = html()->select($name, $list, $selected);
+        }
+        
         return $this->mergeOptions($element, $selectAttributes);
     }
 
