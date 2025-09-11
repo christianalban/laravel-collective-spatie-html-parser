@@ -13,6 +13,11 @@ trait AttributesUtils
             unset($options['class']);
         }
 
+        if (isset($options['placeholder'])) {
+            $newElement = $newElement->placeholder($options['placeholder']);
+            unset($options['placeholder']);
+        }
+
         foreach ($options as $key => $value) {
             if (!$value) {
                 continue;
