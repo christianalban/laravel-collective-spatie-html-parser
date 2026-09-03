@@ -20,8 +20,10 @@ class FormAdapter
         $method = array_key_exists('method', $options) ? $options['method'] : 'POST';
         $route = array_key_exists('route', $options) ? $options['route'] : '';
         $files = array_key_exists('files', $options) ? $options['files'] : false;
+        $url = array_key_exists('url', $options) ? $options['url'] : null;
 
-        unset($options['method'], $options['route'], $options['files']);
+
+        unset($options['method'], $options['route'], $options['files'], $options['url']);
 
         $form = html();
 
@@ -30,6 +32,11 @@ class FormAdapter
             $form = $form->form($method, route($action, $route));
         } elseif ($route != null && $route != [] && $route != '') {
             $form = $form->form($method, route($route));
+        } elseif ($url != null && $url != '') {
+            if (is_array($url) && count($url) > 0) {
+                $url = array_shift($url);
+            }
+            $form = $form->form($method, $url);
         } else {
             $form = $form->form($method);
         }
@@ -75,7 +82,7 @@ class FormAdapter
         } else {
             $element = html()->select($name, $list, $selected);
         }
-        
+
         return $this->mergeOptions($element, $selectAttributes);
     }
 
