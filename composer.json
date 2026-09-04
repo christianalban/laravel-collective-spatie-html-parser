@@ -4,7 +4,7 @@
     "type": "library",
     "require": {
         "php": "^8.3 | ^8.2 | ^8.0 | ^7.4",
-        "spatie/laravel-html": "^3.12",
+        "spatie/laravel-html": "^3.13",
         "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0|^13.0"
     },
     "license": "MIT",
