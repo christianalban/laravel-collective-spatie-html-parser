@@ -8,35 +8,42 @@ This package serves as an adapter to help projects that depend on the obsolete `
 - Leverages the actively maintained `spatie/laravel-html` library.
 
 ## Available Methods
-The following methods can be used and are located in the `src/FormAdapter` directory:
+The following methods are available in the `src/FormAdapter.php` class.
 
-- `checkbox($name, $value = 1, $checked = null, $options = [])`
-- `open(array $options = [])`
-- `label($name, $value = null, $options = [], $escape_html = true)`
-- `text($name, $value = null, $options = [])`
-- `password($name, $options = [])`
-- `select($name, $list = [], $selected = null, array $selectAttributes = [], array $optionsAttributes = [], array $optgroupsAttributes = [])`
-- `radio($name, $value = null, $checked = null, $options = [])`
-- `submit($value = null, $options = [])`
-- `close()`
-- `input($type, $name, $value = null, $options = [])`
-- `search($name, $value = null, $options = [])`
-- `model($model, array $options = [])`
-- `hidden($name, $value = null, $options = [])`
-- `email($name, $value = null, $options = [])`
-- `tel($name, $value = null, $options = [])`
-- `number($name, $value = null, $options = [])`
-- `date($name, $value = null, $options = [])`
-- `datetime($name, $value = null, $options = [])`
-- `datetimeLocal($name, $value = null, $options = [])`
-- `time($name, $value = null, $options = [])`
-- `url($name, $value = null, $options = [])`
-- `file($name, $options = [])`
-- `textarea($name, $value = null, $options = [])`
-- `reset($value, $attributes = [])`
-- `image($url, $name = null, $attributes = [])`
-- `color($name, $value = null, $options = [])`
-- `button($value = null, $options = [])`
+> Notes:
+> - `$options` / `$attributes` are HTML attributes for the generated element.
+> - In `open()` and `model()`, `$options` can include: `method`, `route`, `url`, `files`, plus extra form attributes.
+> - In `select()`, `multiple` inside `$selectAttributes` enables a multiple select.
+
+| Method | Parameters | Description |
+|---|---|---|
+| `checkbox` | `($name, $value = 1, $checked = null, $options = [])` | Checkbox input. |
+| `open` | `(array $options = [])` | Opens a `<form>` tag. |
+| `label` | `($name, $value = null, $options = [], $escape_html = true)` | Label element. |
+| `text` | `($name, $value = null, $options = [])` | Text input. |
+| `password` | `($name, $options = [])` | Password input. |
+| `select` | `($name, $list = [], $selected = null, array $selectAttributes = [], array $optionsAttributes = [], array $optgroupsAttributes = [])` | Select input. |
+| `radio` | `($name, $value = null, $checked = null, $options = [])` | Radio input. |
+| `submit` | `($value = null, $options = [])` | Submit button. |
+| `close` | `()` | Closes the form (`</form>`). |
+| `input` | `($type, $name, $value = null, $options = [])` | Generic input by type. |
+| `search` | `($name, $value = null, $options = [])` | Search input. |
+| `model` | `($model, array $options = [])` | Binds model and opens form. |
+| `hidden` | `($name, $value = null, $options = [])` | Hidden input. |
+| `email` | `($name, $value = null, $options = [])` | Email input. |
+| `tel` | `($name, $value = null, $options = [])` | Telephone input. |
+| `number` | `($name, $value = null, $options = [])` | Number input. |
+| `date` | `($name, $value = null, $options = [])` | Date input. |
+| `datetime` | `($name, $value = null, $options = [])` | Datetime input. |
+| `datetimeLocal` | `($name, $value = null, $options = [])` | Datetime-local input. |
+| `time` | `($name, $value = null, $options = [])` | Time input. |
+| `url` | `($name, $value = null, $options = [])` | URL input. |
+| `file` | `($name, $options = [])` | File input. |
+| `textarea` | `($name, $value = null, $options = [])` | Textarea element. |
+| `reset` | `($value, $attributes = [])` | Reset button. |
+| `image` | `($url, $name = null, $attributes = [])` | Image element (`<img>`). |
+| `color` | `($name, $value = null, $options = [])` | Color input. |
+| `button` | `($value = null, $options = [])` | Generic button element. |
 
 ## Installation
 
